@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @genre.name %></h1>
+</p>
+
+<p>
+  <% @genre.songs.each do |song| %>
+  	<p>Song: <%= link_to "#{song.name}", song %> - 
+  	Artist: <%= link_to "#{song.artist.name}", song.artist %></p>
+  <% end %>
+ </p>
+
+
+<%= link_to 'Edit', edit_genre_path(@genre) %> |
+<%= link_to 'Back', genres_path %>
+
